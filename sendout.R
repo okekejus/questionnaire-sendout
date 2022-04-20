@@ -3,7 +3,7 @@
 ## Prepping libraries to be used ===================================================================
 library('pacman')
 
-pacman::p_load(pacman, RODBC, RDCOMClient, openxlsx)
+p_load(pacman, RODBC, RDCOMClient, openxlsx)
 
 # Pacman: package manager, allows you to load multiple packages 
 # RODBC: allows you to reach into Access database for patient information 
