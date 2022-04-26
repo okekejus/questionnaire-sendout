@@ -1,14 +1,30 @@
-# Questionnaire Sendout
+# Table of Contents
+Background
+Objective
+Tools and Packages
+Results
 
-I am currently the Data Coordinator for the Ontario Birth Study (OBS), a prospective cohort study embedded in practice at Mount Sinai Hospital in Toronto. 
 
+## Background
+I was the previous Data Coordinator for the [Ontario Birth Study](http://ontariobirthstudy.com/), a prospective cohort study embedded in clinical practice at Mount Sinai Hospital in Toronto. Birthing parents <17 weeks gestational age (GA) are recruited by the study, and followed into early postpartum (6-10 weeks). 
 
-Every week, we have to send our participants Lifestyle Questionnaires (LSQ) which we use to collect self-reported data. These questionnaires (and the associated responses) are housed in the St. Micheal’s Research Electronic Data Capture (REDCap) server.
+Study data is collected in the form of 3 lifestyle and 2 diet questionnaires, in addition to abstraction of clinical records from patient charts. Lifestyle questionnaires are hosted on [REDCap](https://www.project-redcap.org/), and are sent to mothers enrolled in the study at 11 weeks GA, 28 weeks GA, and 6 weeks postpartum. 
 
-Questionnaires are sent at 3 time points: early pregnancy (14 weeks gestational), late pregnancy (28 weeks gestational), and early postpartum (4 weeks). If a patient does not complete a questionnaire within two weeks, they are sent a reminder 2 weeks after. This is repeated 2 times after the initial reminder.
+Manual questionnaire sendout would be impractical, so a programming approach was required. 
 
-The questionnaires patients receive are based on clinically validated instruments, such as the patient health questionnaire (PHQ), generalized anxiety disorder questionnaire (GAD), and Edinburgh postnatal depression scale (EPDS).
+## Objective
+Design a script that does the following: 
+- Filter patients based on exclusion criteria (terminations, withdrawals, no future contact, etc.) 
+- Calculate patient GA to determine if survey should be administered 
+- Check if survey has been completed, and send reminders at 2 week intervals, for a maximum of 3 reminders 
+- Send out surveys and passwords to enrolled patients at appropriate times
+- Update SQL database with survey completion/reminder
+- Send notification email to OBS Staff indicating completion + summary of completed and sent out surveys.
+- Calculate EPDS Score (a tool used to measure postnatal depression) and flag patients with scores >= 13, or a response other than "Never" to questions about self-harm
+- Notify OBS Staff if patient has been flagged on EPDS scale 
+- Back up database and delete oldest backup. 
 
-OBS ensures the well being of its patients by evaluating EPDS scores weekly. An EPDS score greater than or equal to 13 is a clinical indicator of major depression. The script identifies this too, and I will show how below. The script is also set to send emails updating myself and my coworker on its progress.
+## Tools and Packages 
 
-This project uses the RODBC and REDCap R packages for the questionnaires, and also makes use of RDCOMClient for emails. 
+## Results 
+Upon my exit from OBS in Feb 2022, the script was still used to complete the above tasks! 
