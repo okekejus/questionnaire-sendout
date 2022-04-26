@@ -1,8 +1,8 @@
 # Table of Contents
-Background
-Objective
-Tools and Packages
-Results
+- Background
+- Objective
+- Tools and Packages
+- Results
 
 
 ## Background
