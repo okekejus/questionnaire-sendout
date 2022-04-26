@@ -6,6 +6,7 @@ Complete LSQ Sendout
 """
 import time
 
+# these were the file names on the drive 
 import obs_data
 import obs_email
 import config
